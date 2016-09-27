@@ -167,5 +167,16 @@ namespace CalculatorTutorial
             txtDisplay.Text = memoryValue.ToString();
         }
 
+        private void btnBksp_Click(object sender, EventArgs e)
+        {
+            if (txtDisplay.Text.Length > 1)
+            {
+                txtDisplay.Text = txtDisplay.Text.Substring(0, txtDisplay.Text.Length - 1);
+            }
+            else
+            {
+                txtDisplay.Text = "0";
+            }
+        }
     }
 }

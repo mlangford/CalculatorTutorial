@@ -330,6 +330,7 @@
             this.btnBksp.TabIndex = 46;
             this.btnBksp.Text = "f";
             this.btnBksp.UseVisualStyleBackColor = true;
+            this.btnBksp.Click += new System.EventHandler(this.btnBksp_Click);
             // 
             // btnEquals
             // 
