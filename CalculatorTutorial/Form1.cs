@@ -21,52 +21,118 @@ namespace CalculatorTutorial
 
         private void btn1_Click(object sender, EventArgs e)
         {
-            txtDisplay.AppendText("1");
+            if (txtDisplay.Text == "0")
+            {
+                txtDisplay.Text = "1";
+            }
+            else
+            {
+                txtDisplay.AppendText("1");
+            }
         }
 
         private void btn2_Click(object sender, EventArgs e)
         {
-            txtDisplay.AppendText("2");
+            if (txtDisplay.Text == "0")
+            {
+                txtDisplay.Text = "2";
+            }
+            else
+            {
+                txtDisplay.AppendText("2");
+            }
         }
 
         private void btn3_Click(object sender, EventArgs e)
         {
-            txtDisplay.AppendText("3");
+            if (txtDisplay.Text == "0")
+            {
+                txtDisplay.Text = "3";
+            }
+            else
+            {
+                txtDisplay.AppendText("3");
+            }
         }
 
         private void btn4_Click(object sender, EventArgs e)
         {
-            txtDisplay.AppendText("4");
+            if (txtDisplay.Text == "0")
+            {
+                txtDisplay.Text = "4";
+            }
+            else
+            {
+                txtDisplay.AppendText("4");
+            }
         }
 
         private void btn5_Click(object sender, EventArgs e)
         {
-            txtDisplay.AppendText("5");
+            if (txtDisplay.Text == "0")
+            {
+                txtDisplay.Text = "5";
+            }
+            else
+            {
+                txtDisplay.AppendText("5");
+            }
         }
 
         private void btn6_Click(object sender, EventArgs e)
         {
-            txtDisplay.AppendText("6");
+            if (txtDisplay.Text == "0")
+            {
+                txtDisplay.Text = "6";
+            }
+            else
+            {
+                txtDisplay.AppendText("6");
+            }
         }
 
         private void btn7_Click(object sender, EventArgs e)
         {
-            txtDisplay.AppendText("7");
+            if (txtDisplay.Text == "0")
+            {
+                txtDisplay.Text = "7";
+            }
+            else
+            {
+                txtDisplay.AppendText("7");
+            }
         }
 
         private void btn8_Click(object sender, EventArgs e)
         {
-            txtDisplay.AppendText("8");
+            if (txtDisplay.Text == "0")
+            {
+                txtDisplay.Text = "8";
+            }
+            else
+            {
+                txtDisplay.AppendText("8");
+            }
         }
 
         private void btn9_Click(object sender, EventArgs e)
         {
-            txtDisplay.AppendText("9");
+            if (txtDisplay.Text == "0")
+            {
+                txtDisplay.Text = "9";
+            }
+            else
+            {
+                txtDisplay.AppendText("9");
+            }
         }
 
         private void btn0_Click(object sender, EventArgs e)
         {
-            txtDisplay.AppendText("0");
+            if (txtDisplay.Text != "0")
+            {
+                txtDisplay.AppendText("0");
+            }
         }
 
         private void btnDP_Click(object sender, EventArgs e)
