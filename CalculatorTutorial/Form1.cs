@@ -19,7 +19,7 @@ namespace CalculatorTutorial
 
         double memoryValue = 0.0;
 
-        private void btn1_Click(object sender, EventArgs e)
+        private void btn_Click(object sender, EventArgs e)
         {
             if (txtDisplay.Text == "0")
             {
@@ -154,7 +154,7 @@ namespace CalculatorTutorial
 
         private void btnMsub_Click(object sender, EventArgs e)
         {
-            memoryValue-+= Convert.ToDouble(txtDisplay.Text);
+            memoryValue += Convert.ToDouble(txtDisplay.Text);
         }
 
         private void btmMclr_Click(object sender, EventArgs e)
