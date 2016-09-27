@@ -18,15 +18,17 @@ namespace CalculatorTutorial
         }
 
         double memoryValue = 0.0;
+        bool clearDisplay = true;
 
         private void btn_Click(object sender, EventArgs e)
         {
             Button button = (Button)sender;
             string digit = button.Text;
 
-            if (txtDisplay.Text == "0")
+            if (clearDisplay)
             {
                 txtDisplay.Text = digit;
+                clearDisplay = false;
             }
             else
             {
@@ -36,13 +38,23 @@ namespace CalculatorTutorial
 
         private void btnDP_Click(object sender, EventArgs e)
         {
-            txtDisplay.AppendText(".");
-            //btnDP.Enabled = false;
+            if (clearDisplay)
+            {
+                txtDisplay.Text = "0.";
+                clearDisplay = false;
+            }
+            else
+            {
+                txtDisplay.AppendText(".");
+                //btnDP.Enabled = false;
+            }
         }
 
         private void btnClear_Click(object sender, EventArgs e)
         {
             txtDisplay.Text = "0";
+            clearDisplay = true;
+            btnDP.Enabled = true;
             //btnDP.Enabled = true;
         }
 
@@ -81,6 +93,17 @@ namespace CalculatorTutorial
         private void txtDisplay_TextChanged(object sender, EventArgs e)
         {
             btnDP.Enabled = !txtDisplay.Text.Contains(".");
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            clearDisplay = true;
+            btnDP.Enabled = true;
+        }
+
+        private void btnEquals_Click(object sender, EventArgs e)
+        {
+            clearDisplay = true;
         }
     }
 }
