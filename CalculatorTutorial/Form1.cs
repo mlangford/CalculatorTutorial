@@ -173,9 +173,120 @@ namespace CalculatorTutorial
             {
                 currentAnswer += lastValueEntered;
             }
+            if (lastOp == '-')
+            {
+                currentAnswer -= lastValueEntered;
+            }
+            if (lastOp == '*')
+            {
+                currentAnswer *= lastValueEntered;
+            }
+            if (lastOp == '/')
+            {
+                currentAnswer /= lastValueEntered;
+            }
 
             txtDisplay.Text = currentAnswer.ToString();
             isFirstValue = true;
+        }
+
+        private void btnSub_Click(object sender, EventArgs e)
+        {
+            clearDisplay = true;
+            btnDP.Enabled = true;
+
+            if (isFirstValue)
+            {
+                currentAnswer = Convert.ToDouble(txtDisplay.Text);
+                isFirstValue = false;
+                lastOp = '-';
+                isAfterEqual = false;
+            }
+            else
+            {
+                lastValueEntered = Convert.ToDouble(txtDisplay.Text);
+                switch (lastOp)
+                {
+                    case '+':
+                        currentAnswer += lastValueEntered;
+                        break;
+                    case '-':
+                        currentAnswer -= lastValueEntered;
+                        break;
+                    case '*':
+                        currentAnswer *= lastValueEntered;
+                        break;
+                    case '/':
+                        currentAnswer /= lastValueEntered;
+                        break;
+                }
+            }
+        }
+
+        private void btnMult_Click(object sender, EventArgs e)
+        {
+            clearDisplay = true;
+            btnDP.Enabled = true;
+
+            if (isFirstValue)
+            {
+                currentAnswer = Convert.ToDouble(txtDisplay.Text);
+                isFirstValue = false;
+                lastOp = '*';
+                isAfterEqual = false;
+            }
+            else
+            {
+                lastValueEntered = Convert.ToDouble(txtDisplay.Text);
+                switch (lastOp)
+                {
+                    case '+':
+                        currentAnswer += lastValueEntered;
+                        break;
+                    case '-':
+                        currentAnswer -= lastValueEntered;
+                        break;
+                    case '*':
+                        currentAnswer *= lastValueEntered;
+                        break;
+                    case '/':
+                        currentAnswer /= lastValueEntered;
+                        break;
+                }
+            }
+        }
+
+        private void btnDiv_Click(object sender, EventArgs e)
+        {
+            clearDisplay = true;
+            btnDP.Enabled = true;
+
+            if (isFirstValue)
+            {
+                currentAnswer = Convert.ToDouble(txtDisplay.Text);
+                isFirstValue = false;
+                lastOp = '/';
+                isAfterEqual = false;
+            }
+            else
+            {
+                lastValueEntered = Convert.ToDouble(txtDisplay.Text);
+                switch (lastOp)
+                {
+                    case '+':
+                        currentAnswer += lastValueEntered;
+                        break;
+                    case '-':
+                        currentAnswer -= lastValueEntered;
+                        break;
+                    case '*':
+                        currentAnswer *= lastValueEntered;
+                        break;
+                    case '/':
+                        currentAnswer /= lastValueEntered;
+                        break;
+                }
+            }
         }
     }
 }
