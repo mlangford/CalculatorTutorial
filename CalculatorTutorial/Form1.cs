@@ -40,6 +40,13 @@ namespace CalculatorTutorial
             {
                 txtDisplay.AppendText(digit);
             }
+
+            if (isAfterEqual)
+            {
+                currentAnswer = 0.0;
+                lastOp = ' ';
+            }
+            isAfterEqual = false;
         }
 
         private void btnDP_Click(object sender, EventArgs e)
@@ -54,6 +61,13 @@ namespace CalculatorTutorial
                 txtDisplay.AppendText(".");
                 //btnDP.Enabled = false;
             }
+
+            if (isAfterEqual)
+            {
+                currentAnswer = 0.0;
+                lastOp = ' ';
+            }
+            isAfterEqual = false;
         }
 
         private void btnClear_Click(object sender, EventArgs e)
@@ -66,6 +80,7 @@ namespace CalculatorTutorial
             isAfterEqual = false;
             //btnDP.Enabled = true;
             currentAnswer= 0;
+            lastOp = ' ';
         }
 
         private void btnMadd_Click(object sender, EventArgs e)
