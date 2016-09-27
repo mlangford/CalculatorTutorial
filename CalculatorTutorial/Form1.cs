@@ -138,11 +138,13 @@ namespace CalculatorTutorial
         private void btnDP_Click(object sender, EventArgs e)
         {
             txtDisplay.AppendText(".");
+            btnDP.Enabled = false;
         }
 
         private void btnClear_Click(object sender, EventArgs e)
         {
             txtDisplay.Text = "0";
+            btnDP.Enabled = true;
         }
 
         private void btnMadd_Click(object sender, EventArgs e)
