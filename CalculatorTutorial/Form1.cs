@@ -19,6 +19,12 @@ namespace CalculatorTutorial
 
         double memoryValue = 0.0;
         bool clearDisplay = true;
+        bool isFirstValue = true;
+        bool isAfterEqual = false;
+
+        double currentAnswer;
+        double lastValueEntered;
+        char lastOp;
 
         private void btn_Click(object sender, EventArgs e)
         {
@@ -55,7 +61,11 @@ namespace CalculatorTutorial
             txtDisplay.Text = "0";
             clearDisplay = true;
             btnDP.Enabled = true;
+
+            isFirstValue = true;
+            isAfterEqual = false;
             //btnDP.Enabled = true;
+            currentAnswer= 0;
         }
 
         private void btnMadd_Click(object sender, EventArgs e)
@@ -99,11 +109,58 @@ namespace CalculatorTutorial
         {
             clearDisplay = true;
             btnDP.Enabled = true;
+
+            if (isFirstValue)
+            {
+                currentAnswer = Convert.ToDouble(txtDisplay.Text);
+                isFirstValue = false;
+                lastOp = '+';
+                isAfterEqual = false;
+            }
+            else
+            {
+                lastValueEntered = Convert.ToDouble(txtDisplay.Text);
+                switch (lastOp)
+                    {
+                    case '+':
+                        currentAnswer += lastValueEntered;
+                        break;
+                    case '-':
+                        currentAnswer -= lastValueEntered;
+                        break;
+                    case '*':
+                        currentAnswer *= lastValueEntered;
+                        break;
+                    case '/':
+                        currentAnswer /= lastValueEntered;
+                        break;
+                }
+            }
+
+            lastOp = '+';
+            isAfterEqual = false;
+            txtDisplay.Text = currentAnswer.ToString();
         }
 
         private void btnEquals_Click(object sender, EventArgs e)
         {
             clearDisplay = true;
+
+            if (isAfterEqual==false)
+            {
+                lastValueEntered = Convert.ToDouble(txtDisplay.Text);
+                isAfterEqual = true;
+            }
+
+
+
+            if (lastOp == '+')
+            {
+                currentAnswer += lastValueEntered;
+            }
+
+            txtDisplay.Text = currentAnswer.ToString();
+            isFirstValue = true;
         }
     }
 }
