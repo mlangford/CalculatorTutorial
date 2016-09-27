@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace CalculatorTutorial
 {
-    public partial class Form1 : Form
+    public partial class frmCalculator : Form
     {
-        public Form1()
+        public frmCalculator()
         {
             InitializeComponent();
         }
@@ -24,7 +24,7 @@ namespace CalculatorTutorial
 
         double currentAnswer;
         double lastValueEntered;
-        char lastOp;
+        char lastOp = ' ';
 
         private void btn_Click(object sender, EventArgs e)
         {
@@ -38,7 +38,10 @@ namespace CalculatorTutorial
             }
             else
             {
-                txtDisplay.AppendText(digit);
+                if (txtDisplay.Text.Length <26)
+                {
+                    txtDisplay.AppendText(digit);
+                }
             }
 
             if (isAfterEqual)
@@ -167,8 +170,6 @@ namespace CalculatorTutorial
                 isAfterEqual = true;
             }
 
-
-
             if (lastOp == '+')
             {
                 currentAnswer += lastValueEntered;
@@ -186,7 +187,10 @@ namespace CalculatorTutorial
                 currentAnswer /= lastValueEntered;
             }
 
-            txtDisplay.Text = currentAnswer.ToString();
+            if (lastOp != ' ')
+            {
+                txtDisplay.Text = currentAnswer.ToString();
+            }
             isFirstValue = true;
         }
 
@@ -287,6 +291,12 @@ namespace CalculatorTutorial
                         break;
                 }
             }
+        }
+
+        private void btnFormat_Click(object sender, EventArgs e)
+        {
+            double tmp = Convert.ToDouble(txtDisplay.Text);
+            txtDisplay.Text = (-tmp).ToString();
         }
     }
 }

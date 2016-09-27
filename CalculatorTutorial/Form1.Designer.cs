@@ -1,6 +1,6 @@
 ﻿namespace CalculatorTutorial
 {
-    partial class Form1
+    partial class frmCalculator
     {
         /// <summary>
         /// Required designer variable.
@@ -62,6 +62,7 @@
             this.txtDisplay.Location = new System.Drawing.Point(22, 22);
             this.txtDisplay.Margin = new System.Windows.Forms.Padding(4);
             this.txtDisplay.Name = "txtDisplay";
+            this.txtDisplay.ReadOnly = true;
             this.txtDisplay.Size = new System.Drawing.Size(440, 45);
             this.txtDisplay.TabIndex = 23;
             this.txtDisplay.Text = "0";
@@ -311,6 +312,7 @@
             this.btnFormat.TabIndex = 3;
             this.btnFormat.Text = "+/-";
             this.btnFormat.UseVisualStyleBackColor = false;
+            this.btnFormat.Click += new System.EventHandler(this.btnFormat_Click);
             // 
             // btnClear
             // 
@@ -349,7 +351,7 @@
             this.btnEquals.UseVisualStyleBackColor = true;
             this.btnEquals.Click += new System.EventHandler(this.btnEquals_Click);
             // 
-            // Form1
+            // frmCalculator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -378,8 +380,11 @@
             this.Controls.Add(this.btn2);
             this.Controls.Add(this.btn1);
             this.Controls.Add(this.txtDisplay);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "frmCalculator";
+            this.Text = "C# Calculator";
             this.ResumeLayout(false);
             this.PerformLayout();
 
