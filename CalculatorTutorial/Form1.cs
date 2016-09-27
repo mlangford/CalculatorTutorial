@@ -17,6 +17,8 @@ namespace CalculatorTutorial
             InitializeComponent();
         }
 
+        double memoryValue = 0.0;
+
         private void btn1_Click(object sender, EventArgs e)
         {
             txtDisplay.AppendText("1");
@@ -66,5 +68,36 @@ namespace CalculatorTutorial
         {
             txtDisplay.AppendText("0");
         }
+
+        private void btnDP_Click(object sender, EventArgs e)
+        {
+            txtDisplay.AppendText(".");
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            txtDisplay.Text = "0";
+        }
+
+        private void btnMadd_Click(object sender, EventArgs e)
+        {
+            memoryValue += Convert.ToDouble(txtDisplay.Text);
+        }
+
+        private void btnMsub_Click(object sender, EventArgs e)
+        {
+            memoryValue-+= Convert.ToDouble(txtDisplay.Text);
+        }
+
+        private void btmMclr_Click(object sender, EventArgs e)
+        {
+            memoryValue = 0.0;
+        }
+
+        private void btnMrec_Click(object sender, EventArgs e)
+        {
+            txtDisplay.Text = memoryValue.ToString();
+        }
+
     }
 }
